@@ -1,5 +1,5 @@
 var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
-var packageBody,ground,box1,box2,box3,bp,box4,box5,box6;
+var packageBody,ground,box1,box2,box3,bp,box4,box5,box6,fakebox;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -39,14 +39,17 @@ function setup() {
 	World.add(world,box2);
 	box3= Bodies.rectangle(bp+bp,650,100,20,{isStatic:true});
 	World.add(world,box3);
-	
+// This is a fake box to make the animation more relistic.
+fakebox= Bodies.rectangle(400,635,100,30,{isStatic:true});
+	World.add(world,fakebox);
+
 	//Create a Ground
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
  	World.add(world, ground);
 
 box4=createSprite(450,610,20,100);
-box5=createSprite(400,650,100,20);
-box6=createSprite(350,610,20,100);	 
+box5=createSprite(390,650,130,20);
+box6=createSprite(320,610,20,100);	 
 
 box4.shapeColor="red"
 box5.shapeColor="red"
